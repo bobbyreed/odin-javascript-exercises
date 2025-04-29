@@ -1,9 +1,19 @@
 const palindromes = function (string) {
+    function cleanString(string){
+        original = string.toLowerCase();
+        original = original.replaceAll(" ", "");
+        original = original.replaceAll(".", "");
+        original = original.replaceAll(",", "");
+        original = original.replaceAll("!", "");
+        return original;
+    }
+
     cleanString(string);
     console.log(string);
     console.log(original);
 
-    let reverseString = string.split("").reverse().join("");
+    let reverseString = original.split("").reverse().join("");
+    console.log(reverseString);
     if(original === reverseString){
         return true;
     }
@@ -12,13 +22,7 @@ const palindromes = function (string) {
     }
 };
 
-function cleanString(string){
-    string, original.toLowerCase();
-    string, original = string.replaceAll(" ", "");
-    string, original = string.replaceAll(".", "");
-    string, original = string.replaceAll("!", "");
-    return string, original;
-}
+
 
 // Do not edit below this line
 module.exports = palindromes;
